@@ -8,8 +8,8 @@ resource "aws_instance" "sample_web_server" {
   vpc_security_group_ids = [aws_security_group.sample_sg.id]
   user_data              = <<EOF
 #! /bin/bash
-sudo yum install -y httpd
-sudo systemctl start httpd
-sudo systemctl enable httpd
+sudo yum install -y nginx
+sudo systemctl start nginx
+sudo systemctl enable nginx
 EOF
 }
