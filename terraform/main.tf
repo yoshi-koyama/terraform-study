@@ -7,12 +7,12 @@ terraform {
       version = "~> 4.25.0"
     }
   }
-  backend "s3" {
-    bucket  = "terraform-study-tfstate"
-    key     = "terraform.tfstate"
-    region  = "ap-northeast-1"
-    profile = "saml"
-  }
+  # backend "s3" {
+  #   bucket  = "terraform-study-tfstate"
+  #   key     = "terraform.tfstate"
+  #   region  = "ap-northeast-1"
+  #   profile = "saml"
+  # }
 }
 provider "aws" {
   region = "ap-northeast-1"
@@ -22,5 +22,12 @@ provider "aws" {
       Purpose = "terraformstudy"
       Author = "koyama"
     }
+  }
+}
+
+resource "aws_s3_bucket" "terraform_state" {
+  bucket = "terraform-study-tfstate"
+  versioning {
+    enabled = true
   }
 }
