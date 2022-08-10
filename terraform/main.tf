@@ -8,7 +8,7 @@ terraform {
     }
   }
   backend "s3" {
-    bucket  = "terraform-study-tfstate"
+    bucket  = "terraform-raisetech-study-tfstate"
     key     = "terraform.tfstate"
     region  = "ap-northeast-1"
     profile = "saml"
