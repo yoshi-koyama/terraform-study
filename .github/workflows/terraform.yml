@@ -1,9 +1,9 @@
 name: terraform apply test by OIDC
 
 on: 
-  push:
-    branches:
-      - main
+  # push:
+  #   branches:
+  #     - main
 
 permissions:
   id-token: write
@@ -50,7 +50,7 @@ jobs:
         run: terraform plan -no-color
         continue-on-error: true
 
-      - name: Terraform Apply
-        id: apply
-        working-directory: ./terraform
-        run: terraform apply -auto-approve
+      # - name: Terraform Apply
+      #   id: apply
+      #   working-directory: ./terraform
+      #   run: terraform apply -auto-approve
