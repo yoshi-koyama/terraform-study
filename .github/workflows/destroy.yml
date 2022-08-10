@@ -45,5 +45,5 @@ jobs:
       - name: Terraform Plan
         id: plan
         working-directory: ./terraform
-        run: terraform plan -no-color -destory
+        run: terraform plan -destory -no-color
         continue-on-error: true
