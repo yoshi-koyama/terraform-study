@@ -1,9 +1,7 @@
 name: terraform apply test by OIDC
 
-on: 
-  # push:
-  #   branches:
-  #     - main
+on:
+  workflow_dispatch:
 
 permissions:
   id-token: write
