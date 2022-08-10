@@ -9,6 +9,7 @@ resource "aws_instance" "sample_web_server" {
   user_data              = <<EOF
 #! /bin/bash
 sudo yum install -y nginx
+sudo systemctl status nginx
 sudo systemctl start nginx
 sudo systemctl enable nginx
 EOF
